@@ -1,18 +1,18 @@
-package com.api.rest.controller;
+package com.api.rest.controller.v2;
 
 import com.api.rest.model.Voto;
 import com.api.rest.repository.VotoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 
-@RestController
+@RestController("VotoControllerV2")
+@RequestMapping("/v2")
 public class VotoController {
 
     @Autowired

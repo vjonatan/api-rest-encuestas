@@ -1,4 +1,4 @@
-package com.api.rest.controller;
+package com.api.rest.controller.v1;
 
 import com.api.rest.exception.ResourceNotFoundException;
 import com.api.rest.model.Encuesta;
@@ -7,7 +7,6 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -15,7 +14,8 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 import java.util.Optional;
 
-@RestController
+@RestController("EncuestaControllerV1")
+@RequestMapping("/v1")
 public class EncuestaController {
 
     @Autowired

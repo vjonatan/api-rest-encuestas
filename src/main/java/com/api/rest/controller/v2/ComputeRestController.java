@@ -1,4 +1,4 @@
-package com.api.rest.controller;
+package com.api.rest.controller.v2;
 
 import com.api.rest.dto.OptionCountDTO;
 import com.api.rest.dto.VotoResultDTO;
@@ -8,13 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 import java.util.Map;
 
-@RestController
+@RestController("ComputeRestControllerV2")
+@RequestMapping("/v2")
 public class ComputeRestController {
 
     @Autowired
