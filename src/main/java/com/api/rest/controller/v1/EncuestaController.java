@@ -43,7 +43,7 @@ public class EncuestaController {
 
     @GetMapping("/encuestas/{encuestaId}")
     ResponseEntity<?> obtenerEncuesta(@PathVariable Long encuestaId){
-        verificarEncuesta(encuestaId);
+        verifyEncuesta(encuestaId);
 
         Optional<Encuesta> encuesta = encuestaRepository.findById(encuestaId);
 
@@ -56,8 +56,7 @@ public class EncuestaController {
 
     @DeleteMapping("/encuestas/{encuestaId}")
     ResponseEntity<?> eliminarEncuesta(@PathVariable Long encuestaId){
-        verificarEncuesta(encuestaId);
-
+        verifyEncuesta(encuestaId);
         encuestaRepository.deleteById(encuestaId);
         return new ResponseEntity<>(HttpStatus.OK);
 
@@ -65,12 +64,13 @@ public class EncuestaController {
 
     @PutMapping("/encuestas/{encuestaId}")
     ResponseEntity<?> actualizarEncuesta(@Valid @RequestBody Encuesta encuesta, @PathVariable Long encuestaId){
+        verifyEncuesta(encuestaId);
         encuesta.setId(encuestaId);
         Encuesta udpated = encuestaRepository.save(encuesta);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    protected void verificarEncuesta(Long encuestaID){
+    protected void verifyEncuesta(Long encuestaID){
         Optional<Encuesta> encuesta = encuestaRepository.findById(encuestaID);
         if(!encuesta.isPresent()){
             throw new ResourceNotFoundException("La encuesta con ID=" + encuestaID + " no se encuentra");

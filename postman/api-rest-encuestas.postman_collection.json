@@ -7,205 +7,211 @@
 	},
 	"item": [
 		{
-			"name": "Crear Encuesta",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"pregunta\": \"cuál es tu fruta preferida?\",\n    \"opciones\":\n        [\n            {\n                \"value\": \"manzana\"\n            },\n            {\n                \"value\": \"pera\"\n            },\n            {\n                \"value\": \"naranja\"\n            },\n            {\n                \"value\": \"banana\"\n            }\n        ]\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/encuestas",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"encuestas"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Obtener Encuestas",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/encuestas",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"encuestas"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Obtener Encuestas V2",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/v2/encuestas?page=0&size=1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"v2",
-						"encuestas"
-					],
-					"query": [
-						{
-							"key": "page",
-							"value": "0"
+			"name": "v1",
+			"item": [
+				{
+					"name": "Crear Encuesta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"opciones\": [\n        {\n            \"value\": \"Masculino\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						{
-							"key": "size",
-							"value": "1"
+						"url": {
+							"raw": "http://localhost:8080/v1/encuestas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"encuestas"
+							]
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Obtener Encuesta por ID",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/encuestas/111",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"encuestas",
-						"111"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Eliminar Encuesta",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/encuestas/152",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"encuestas",
-						"152"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Crear Voto",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"opcion\": {\n        \"id\": 5,\n        \"value\": \"cross\"\n    }\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/encuesta/153/voto",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"encuesta",
-						"153",
-						"voto"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Listar Votos por Encuesta",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/encuestas/153/votos",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"encuestas",
-						"153",
-						"votos"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Calcular cantidad de votos",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/calcularResultado?encuestaId=153",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"calcularResultado"
-					],
-					"query": [
-						{
-							"key": "encuestaId",
-							"value": "153"
+				{
+					"name": "Obtener Encuestas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/encuestas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"encuestas"
+							]
 						}
-					]
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Encuesta por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/encuestas/111",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"encuestas",
+								"111"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Encuesta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/encuestas/152",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"encuestas",
+								"152"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Voto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"opcion\": {\n        \"id\": 5,\n        \"value\": \"cross\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/encuesta/153/voto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"encuesta",
+								"153",
+								"voto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Votos por Encuesta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/encuestas/153/votos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"encuestas",
+								"153",
+								"votos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Calcular cantidad de votos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/calcularResultado?encuestaId=153",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"calcularResultado"
+							],
+							"query": [
+								{
+									"key": "encuestaId",
+									"value": "153"
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "New Request",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
+			"name": "v2",
+			"item": [
+				{
+					"name": "Obtener Encuestas V2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v2/encuestas?page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"encuestas"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
